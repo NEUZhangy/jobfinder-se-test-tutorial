@@ -1,0 +1,17 @@
+node_modules/
+.wrangler/
+.dev.vars
+dist/
+coverage/
+.nyc_output/
+test-results/
+playwright-report/
+
+# macOS
+.DS_Store
+
+# per-test Playwright videos; only recordings/e2e-run.mp4 is kept
+*.webm
+
+# TypeScript incremental build cache
+*.tsbuildinfo

@@ -1,0 +1,21 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "jobfinder",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-03",
+  "assets": { "not_found_handling": "single-page-application", "run_worker_first": ["/api/*"] },
+  "d1_databases": [
+    { "binding": "DB", "database_name": "jobfinder", "database_id": "918f7956-695e-4da4-9f59-40d78a624a12", "migrations_dir": "migrations" }
+  ],
+  "ai": { "binding": "AI", "remote": true },
+  "workers_dev": false,
+  "preview_urls": false,
+  "triggers": { "crons": [] },
+  "vars": {
+    "BATCH_SIZE": "10",
+    "LLM_MODEL": "typesafe/jev-1.13",
+    "LLM_BASE_URL": "https://llm.onerouter.pro/v1"
+  },
+  "secrets": { "required": ["LLM_API_KEY"] },
+  "observability": { "enabled": true, "traces": { "enabled": true } }
+}
